@@ -16,7 +16,7 @@
           viewBox="0 0 43 31"
           width="100"
           color-interpolation-filters="sRGB"
-          filter="url(#distortion-filter) url(#blur-filter)"
+          filter="url(#distortion-filter)"
         >
           <defs>
             <filter id="distortion-filter">
@@ -31,11 +31,9 @@
                 in="SourceGraphic"
                 in2="turbulence"
                 scale="4"
+                result="displacement"
               />
-            </filter>
-
-            <filter id="blur-filter">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" />
+              <feGaussianBlur in="displacement" stdDeviation="0.6" />
             </filter>
 
             <g id="letters">

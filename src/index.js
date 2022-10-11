@@ -2,7 +2,9 @@ function randomizeTurbulence() {
   const turbulence = document.querySelector("#distortion-filter feTurbulence");
 
   setInterval(() => {
-    turbulence.seed.baseVal = Math.floor(Math.random() * 10);
+    const seedBaseVal = Math.floor(Math.random() * 100) + 1;
+
+    turbulence.seed.baseVal = seedBaseVal;
   }, 200);
 }
 
