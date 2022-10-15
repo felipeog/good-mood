@@ -6,3 +6,4 @@ Reproducing [GOOD MOOD](https://dribbble.com/shots/14077560-GOOD-MOOD) by [Mat V
 
 - https://stackoverflow.com/a/50651807
 - https://stackoverflow.com/a/72635376
+- https://stackoverflow.com/a/34249810
