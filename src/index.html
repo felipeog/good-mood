@@ -13,28 +13,37 @@
       <div class="container">
         <svg
           class="good-mood"
-          viewBox="0 0 43 31"
+          viewBox="0 0 63 51"
           color-interpolation-filters="sRGB"
-          filter="url(#distortion-filter) url(#blur-filter)"
+          width="800"
         >
           <defs>
             <filter id="distortion-filter">
               <feTurbulence
                 type="turbulence"
-                baseFrequency="0.08"
-                numOctaves="4"
+                baseFrequency="1.6"
+                numOctaves="1.6"
                 seed="0"
                 result="turbulence"
-              />
+              >
+                <animate
+                  attributeName="seed"
+                  from="1"
+                  to="5"
+                  dur="1s"
+                  repeatCount="indefinite"
+                />
+              </feTurbulence>
+
               <feDisplacementMap
                 in="SourceGraphic"
                 in2="turbulence"
-                scale="4"
+                scale="0.3"
               />
             </filter>
 
             <filter id="blur-filter">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="0.4" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="0.04" />
             </filter>
 
             <g id="letters">
@@ -160,23 +169,23 @@
             </g>
           </defs>
 
-          <g id="good">
-            <use href="#letter-g" x="0" y="0" fill="#FFFFFF" />
-            <use href="#letter-o-1" x="11" y="0" fill="#FFFFFF" />
-            <use href="#letter-o-2" x="22" y="0" fill="#FFFFFF" />
-            <use href="#letter-d-1" x="33" y="0" fill="#FFFFFF" />
+          <g id="background">
+            <rect width="63" height="51" fill="#000" />
           </g>
 
-          <g id="mood">
-            <use href="#letter-m" x="0" y="11" fill="#FFB200" />
-            <use href="#letter-o-3" x="11" y="11" fill="#006BF5" />
-            <use href="#letter-o-4" x="22" y="11" fill="#FD002D" />
-            <use href="#letter-d-2" x="33" y="11" fill="#FF769F" />
+          <g id="words" filter="url(#distortion-filter) url(#blur-filter)">
+            <use href="#letter-g" x="10" y="10" fill="#FFFFFF" />
+            <use href="#letter-o-1" x="21" y="10" fill="#FFFFFF" />
+            <use href="#letter-o-2" x="32" y="10" fill="#FFFFFF" />
+            <use href="#letter-d-1" x="43" y="10" fill="#FFFFFF" />
+
+            <use href="#letter-m" x="10" y="21" fill="#FFB200" />
+            <use href="#letter-o-3" x="21" y="21" fill="#006BF5" />
+            <use href="#letter-o-4" x="32" y="21" fill="#FD002D" />
+            <use href="#letter-d-2" x="43" y="21" fill="#FF769F" />
           </g>
         </svg>
       </div>
     </div>
-
-    <script type="module" src="./index.js"></script>
   </body>
 </html>
