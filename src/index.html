@@ -12,7 +12,7 @@
     <div class="wrapper">
       <div class="container">
         <svg
-          class="good-mood"
+          id="good-mood"
           viewBox="0 0 63 51"
           color-interpolation-filters="sRGB"
           width="800"
@@ -21,8 +21,8 @@
             <filter id="distortion-filter">
               <feTurbulence
                 type="turbulence"
-                baseFrequency="1.6"
-                numOctaves="1"
+                baseFrequency="1"
+                numOctaves="2"
                 seed="0"
                 result="turbulence"
               >
@@ -43,7 +43,7 @@
             </filter>
 
             <filter id="blur-filter">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="0.04" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="0.06" />
             </filter>
 
             <path d="" id="letter-g">
@@ -161,7 +161,7 @@
                 keySplines="0.45, 0.05, 0.55, 0.95; 0.45, 0.05, 0.55, 0.95"
                 keyTimes="0; 0.5; 1"
                 values="M0,0 L6,0 Q10,0 10,4 L10,16 Q10,20 6,20 L0,20 L0,17 L4,17 Q6,17 6,16 L6,4 Q6,3 4,3 L4,17 L0,17;
-                        M0,10 L6,10 Q10,10 10,14 L10,16 Q10,20 6,20 L0,20 L0,17 L4,17 Q6,17 6,16 L6,14 Q6,13 4,13 L4,17 L0,17; 
+                        M0,10 L6,10 Q10,10 10,14 L10,16 Q10,20 6,20 L0,20 L0,17 L4,17 Q6,17 6,16 L6,14 Q6,13 4,13 L4,17 L0,17;
                         M0,0 L6,0 Q10,0 10,4 L10,16 Q10,20 6,20 L0,20 L0,17 L4,17 Q6,17 6,16 L6,4 Q6,3 4,3 L4,17 L0,17"
               />
             </path>
@@ -182,6 +182,45 @@
               <use href="#letter-d-2" x="43" y="21" fill="#FF769F" />
             </g>
           </g>
+
+          <!-- prettier-ignore -->
+          <script>
+            const turbulence = document.querySelector(
+              "#good-mood #distortion-filter feTurbulence"
+            );
+            const gaussianBlur = document.querySelector(
+              "#good-mood #blur-filter feGaussianBlur"
+            );
+
+            const gt2 = {
+              turbulence: {
+                baseFrequency: "1.6",
+                numOctaves: "1",
+              },
+              gaussianBlur: {
+                stdDeviation: "0.04",
+              },
+            };
+            const lt2 = {
+              turbulence: {
+                baseFrequency: "1",
+                numOctaves: "2",
+              },
+              gaussianBlur: {
+                stdDeviation: "0.06",
+              },
+            };
+
+            if (window.devicePixelRatio >= 1.5) {
+              turbulence.setAttribute("baseFrequency", gt2.turbulence.baseFrequency);
+              turbulence.setAttribute("numOctaves", gt2.turbulence.numOctaves);
+              gaussianBlur.setAttribute("stdDeviation", gt2.gaussianBlur.stdDeviation);
+            } else {
+              turbulence.setAttribute("baseFrequency", lt2.turbulence.baseFrequency);
+              turbulence.setAttribute("numOctaves", lt2.turbulence.numOctaves);
+              gaussianBlur.setAttribute("stdDeviation", lt2.gaussianBlur.stdDeviation);
+            }
+          </script>
         </svg>
       </div>
     </div>
