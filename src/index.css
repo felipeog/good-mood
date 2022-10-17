@@ -9,15 +9,10 @@
 .wrapper {
   display: flex;
   min-height: 100vh;
-  background-color: #000;
 }
 
 .container {
   margin: auto;
-}
-
-.good-mood {
-  padding: 20px;
-  width: 40vw;
-  min-width: 280px;
+  width: 800px;
+  max-width: 100%;
 }
