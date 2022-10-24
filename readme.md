@@ -2,7 +2,9 @@
 
 Reproducing [GOOD MOOD](https://dribbble.com/shots/14077560-GOOD-MOOD) by [Mat Voyce](https://dribbble.com/MatVoyce) with SVG.
 
-# Preview
+Blog series about this project: [GOOD MOOD introduction: SVG animation](https://blog.felipeog.com.br/en/good-mood/introducao).
+
+## Preview
 
 [![felipeog-good-mood-netlify-app.png](https://i.postimg.cc/7LPf0kSk/felipeog-good-mood-netlify-app.png)](https://postimg.cc/K1VGhC9q)
 
