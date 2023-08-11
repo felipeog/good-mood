@@ -34,11 +34,10 @@
                 in="SourceGraphic"
                 in2="turbulence"
                 scale="0.3"
+                result="displacement-map"
               />
-            </filter>
 
-            <filter id="blur-filter">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="0.06" />
+              <feGaussianBlur in="displacement-map" stdDeviation="0.06" />
             </filter>
 
             <path d="" id="letter-g">
@@ -164,17 +163,15 @@
 
           <rect width="63" height="51" fill="#000" />
 
-          <g filter="url(#blur-filter)">
-            <g filter="url(#distortion-filter)">
-              <use href="#letter-g" x="10" y="10" fill="#FFFFFF" />
-              <use href="#letter-o-1" x="21" y="10" fill="#FFFFFF" />
-              <use href="#letter-o-2" x="32" y="10" fill="#FFFFFF" />
-              <use href="#letter-d-1" x="43" y="10" fill="#FFFFFF" />
-              <use href="#letter-m" x="10" y="21" fill="#FFB200" />
-              <use href="#letter-o-3" x="21" y="21" fill="#006BF5" />
-              <use href="#letter-o-4" x="32" y="21" fill="#FD002D" />
-              <use href="#letter-d-2" x="43" y="21" fill="#FF769F" />
-            </g>
+          <g filter="url(#distortion-filter)">
+            <use href="#letter-g" x="10" y="10" fill="#FFFFFF" />
+            <use href="#letter-o-1" x="21" y="10" fill="#FFFFFF" />
+            <use href="#letter-o-2" x="32" y="10" fill="#FFFFFF" />
+            <use href="#letter-d-1" x="43" y="10" fill="#FFFFFF" />
+            <use href="#letter-m" x="10" y="21" fill="#FFB200" />
+            <use href="#letter-o-3" x="21" y="21" fill="#006BF5" />
+            <use href="#letter-o-4" x="32" y="21" fill="#FD002D" />
+            <use href="#letter-d-2" x="43" y="21" fill="#FF769F" />
           </g>
         </svg>
       </div>
